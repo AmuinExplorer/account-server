@@ -20,9 +20,9 @@ app.use(bodyParser.urlencoded({ extended: false })); //this is used for parsing 
 app.use(bodyParser.json()); //this is used for reading json data format
 
 if(process.env.NODE_ENV === 'production') {
-   app.use(express.static('passwords/build'));
+   app.use(express.static('build'));
    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'passwords', 'build', 'index.html'))
+      res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
    })
 }
 
